@@ -1,4 +1,3 @@
-import { Produto as ProdutoType } from '../../App'
 import * as S from './styles'
 
 type Props = {
@@ -6,6 +5,13 @@ type Props = {
   aoComprar: (produto: ProdutoType) => void
   favoritar: (produto: ProdutoType) => void
   estaNosFavoritos: boolean
+}
+
+export type ProdutoType = {
+  id: number
+  nome: string
+  imagem: string
+  preco: number
 }
 
 export const paraReal = (valor: number) =>

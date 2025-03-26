@@ -1,6 +1,4 @@
-import { Produto as ProdutoType } from '../App'
 import Produto from '../components/Produto'
-
 import * as S from './styles'
 
 type Props = {
@@ -41,3 +39,9 @@ const ProdutosComponent = ({
 }
 
 export default ProdutosComponent
+export type ProdutoType = {
+  id: number
+  nome: string
+  preco: number
+  imagem: string
+}
