@@ -1,18 +1,22 @@
+/* eslint-disable prettier/prettier */
 import Header from './components/Header'
 import Produtos from './containers/Produtos'
 
 import { GlobalStyle } from './styles'
 
-import store from './components/store'
+export type Produto = {
+  id: number
+  nome: string
+  preco: number
+  imagem: string
+}
 
 function App() {
-  // -------------------------------------------------------------
-
   return (
     <>
       <GlobalStyle />
       <div className="container">
-        {/* <Header /> */}
+        <Header />
         <Produtos />
       </div>
     </>
