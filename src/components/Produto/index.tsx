@@ -1,30 +1,22 @@
 import * as S from './styles'
+import { RootState } from '../store'
+import { useSelector } from 'react-redux'
 
-type Props = {
+type ComponentType = {
   produto: ProdutoType
   aoComprar: (produto: ProdutoType) => void
   favoritar: (produto: ProdutoType) => void
   estaNosFavoritos: boolean
 }
 
-export type ProdutoType = {
-  id: number
-  nome: string
-  imagem: string
-  preco: number
-}
-
-export const paraReal = (valor: number) =>
-  new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(
-    valor
-  )
-
 const ProdutoComponent = ({
   produto,
   aoComprar,
   favoritar,
   estaNosFavoritos
-}: Props) => {
+}: ComponentType) => {
+  const { nome, imagem } = useSelector((state: RootState) => state.api)
+
   return (
     <S.Produto>
       <S.Capa>
@@ -46,4 +38,15 @@ const ProdutoComponent = ({
   )
 }
 
+export type ProdutoType = {
+  id: number
+  nome: string
+  imagem: string
+  preco: number
+}
+
+export const paraReal = (valor: number) =>
+  new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(
+    valor
+  )
 export default ProdutoComponent

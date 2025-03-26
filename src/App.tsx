@@ -3,6 +3,8 @@ import Produtos from './containers/Produtos'
 
 import { GlobalStyle } from './styles'
 
+import store from './components/store'
+
 function App() {
   // -------------------------------------------------------------
 
@@ -10,7 +12,7 @@ function App() {
     <>
       <GlobalStyle />
       <div className="container">
-        <Header />
+        {/* <Header /> */}
         <Produtos />
       </div>
     </>

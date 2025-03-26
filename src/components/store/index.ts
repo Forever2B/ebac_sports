@@ -12,6 +12,18 @@ const store = configureStore({
   }
 })
 
+// --------------
+declare global {
+  interface Window {
+    store: ReturnType<typeof configureStore>
+  }
+}
+
+if (typeof window !== 'undefined') {
+  window.store = store
+}
+// -----------------
+
 export type RootState = ReturnType<typeof store.getState>
 export const useAppDispatch: () => AppDispatch = useDispatch
 export type AppDispatch = typeof store.dispatch

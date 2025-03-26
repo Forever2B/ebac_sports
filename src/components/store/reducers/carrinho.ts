@@ -21,7 +21,7 @@ const carrinhoSlice = createSlice({
       const jogo = action.payload
 
       if (state.items.find((game) => game.id === jogo.id)) {
-        alert('Item já foi no carrinho!')
+        alert('Uma cópia do item já está no carrinho!')
       } else {
         state.items.push(jogo)
       }

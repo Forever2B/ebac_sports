@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-import { Produto } from '../../App'
+import { ProdutoType as Produto } from '../Produto/index'
 
 import cesta from '../../assets/cesta.png'
 import { paraReal } from '../Produto'
